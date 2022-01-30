@@ -1,33 +1,40 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {useSelector, useDispatch} from "react-redux"
 
-import {deleteCarThunk, getAll} from "../../store/carReducer";
+import {carActions} from "../../store/carReducer";
+import Car from "../car/Car";
 
-function Cars() {
+function Cars({handleOnChange}) {
     const state = useSelector(state => state.cars.cars)
     const dispatch = useDispatch()
 
-    const handleClick = (id) => {
-        dispatch(deleteCarThunk({id}))
-        dispatch(getAll())
+    const handleClick = (id, action) => {
+        switch (action) {
+            case 'delete': {
+                dispatch(carActions.deleteCar({id}))
+                dispatch(carActions.clearCurrent())
+                break
+            }
+            case 'modify': {
+                dispatch(carActions.setCurrent({id}))
+                handleOnChange(id)
+                break
+            }
+        }
     }
 
     return (
 
-    state.map(car => {
-        return (
-            <div key={car.id} className={'d-flex offset-3 col-6 mt-2'}>
-                <div className={'col-2 border p-2'}>{car.id}</div>
-                <div className={'col-4 border p-2'}>{car.model}</div>
-                <div className={'col-2 border p-2'}>{car.price}</div>
-                <div className={'col-2 border p-2'}>{car.year}</div>
-                <button onClick={() => handleClick(car.id)} className={'col-2 border'}>Delete
-                </button>
-            </div>
-        )
-    })
-)
-    ;
+        state.map(car => {
+            return (
+                <Car key={car.id}
+                     car={car}
+                     handleClick={handleClick}
+                     carId={car.id}
+                />
+            )
+        })
+    )
 }
 
 export default Cars;
