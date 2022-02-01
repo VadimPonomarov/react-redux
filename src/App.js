@@ -6,6 +6,8 @@ import CarsPage from "./pages/CarsPage";
 import UsersPage from "./pages/UsersPage";
 import PostsPage from "./pages/PostsPage";
 import CommentsPage from "./pages/CommentsPage";
+import UserPostsPage from "./pages/UserPostsPage";
+import PostCommentsPage from "./pages/PostCommentsPage";
 
 function App() {
     return (
@@ -14,7 +16,9 @@ function App() {
                 <Route path={''} element={<CarsPage/>}/>
                 <Route path={'users'} element={<UsersPage/>}/>
                 <Route path={'posts'} element={<PostsPage/>}/>
+                <Route path={'posts/:userId'} element={<UserPostsPage/>}/>
                 <Route path={'comments'} element={<CommentsPage/>}/>
+                <Route path={'posts/:postId/comments'} element={<PostCommentsPage/>}/>
             </Route>
         </Routes>
     )

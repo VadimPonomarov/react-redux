@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Menu from "../components/menu/Menu";
-import {Outlet} from "react-router-dom";
+import {Outlet} from 'react-router-dom';
 
 function MainLayout() {
     const menuItems = ['Cars', 'Users', 'Posts', 'Comments']

@@ -1,11 +1,14 @@
 import React from 'react';
 
-import Users from "../components/users/Users";
+import Posts from "../components/posts/Posts";
+import {useParams} from "react-router-dom";
 
 function UsersPage() {
+    const userId = useParams().userId
+
     return (
         <div className={'container d-flex flex-wrap justify-content-center'}>
-            <Users/>
+            <Posts userId={userId}/>
         </div>
     );
 }

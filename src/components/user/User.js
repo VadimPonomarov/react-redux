@@ -2,7 +2,7 @@ import React from 'react';
 
 function User({user}) {
     return (
-       <div className={'card text-center m-3 p-3'}>
+       <div className={'text-center m-3 p-3'}>
            <h4>{user.id} - {user.name}</h4>
            <div>{user.username}</div>
            <div>{user.email}</div>
