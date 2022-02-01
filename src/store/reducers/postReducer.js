@@ -1,5 +1,5 @@
 import {createSlice, createAsyncThunk} from "@reduxjs/toolkit";
-import {postsService} from "../servises/posts.service";
+import {postsService} from "../../servises/posts.service";
 
 export const getAll = createAsyncThunk(
     'posts/getAll',

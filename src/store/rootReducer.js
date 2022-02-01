@@ -1,9 +1,9 @@
 import {combineReducers} from "@reduxjs/toolkit";
 
-import carReduser from './carReducer'
-import userReducer from "./userReducer";
-import postReducer from "./postReducer";
-import commentReducer from "./commentReducer";
+import carReduser from './reducers/carReducer'
+import userReducer from "./reducers/userReducer";
+import postReducer from "./reducers/postReducer";
+import commentReducer from "./reducers/commentReducer";
 
 const rootReducer = combineReducers({
     cars: carReduser,

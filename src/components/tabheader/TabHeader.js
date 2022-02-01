@@ -1,7 +1,7 @@
 import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
 
-import {carActions, createCar, deleteCarThunk, getAll} from "../../store/carReducer";
+import {carActions, createCar, deleteCarThunk, getAll} from "../../store/reducers/carReducer";
 
 function TabHeader() {
     const state = useSelector(state => state.cars.cars)

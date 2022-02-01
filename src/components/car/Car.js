@@ -1,7 +1,7 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
 
-import {carActions} from '../../store/carReducer'
+import {carActions} from '../../store/reducers/carReducer'
 
 
 function Car({car, handleClick, carId: id}) {

@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {v4 as uuidv4} from 'uuid';
 import {ErrorMessage} from '@hookform/error-message';
 
-import {carActions, getAll} from "../../store/carReducer";
+import {carActions, getAll} from "../../store/reducers/carReducer";
 import Cars from "../cars/Cars";
 import TabHeader from "../tabheader/TabHeader";
 
@@ -20,8 +20,8 @@ const CarForm = () => {
         register,
         reset,
         setValue,
-        formState: {errors}
-    } = useForm({defaultValues: carInitialState});
+        formState: {errors, isValid}
+    } = useForm({defaultValues: carInitialState, mode: "onTouched"});
 
     const submit = (data) => {
         if (!currentId) {
@@ -95,8 +95,8 @@ const CarForm = () => {
                             {
                                 required: 'Required Price',
                                 pattern: {
-                                    value: /^\d{1,7}$/g,
-                                    message: 'Price: should be of INTEGER type up to 7 digits'
+                                    value: /^[1-9]\d{1,9}$/g,
+                                    message: 'Price: should be of INTEGER type up to 10 digits'
                                 }
                             })}/>
                     </label>
@@ -108,9 +108,9 @@ const CarForm = () => {
                                {...register('year',
                                    {
                                        required: 'Required Year',
-                                       maxLength: {
-                                           value: 4,
-                                           message: 'Year: Input limit - 4 figures'
+                                       pattern: {
+                                           value: /^\d{4}$/g,
+                                           message: 'Year: should be "YYYY" - like "1997"'
                                        }
                                    }
                                )}
@@ -118,7 +118,7 @@ const CarForm = () => {
                     </label>
                 </div>
                 <div className={'m-2'}>
-                    <button>Save</button>
+                    <input type='submit' disabled={!isValid} value='Save'/>
                 </div>
             </form>
             <div className={'container d-flex flex-wrap text-danger justify-content-center'}>
