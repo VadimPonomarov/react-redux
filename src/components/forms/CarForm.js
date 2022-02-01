@@ -37,6 +37,7 @@ const CarForm = () => {
     }
 
     const handleOnChange = (id) => {
+        reset()
         const currentCar = state.find(car => car.id === id) || carInitialState
         setValue('curId', currentCar.curId)
         setValue('model', currentCar.model)
