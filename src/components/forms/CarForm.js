@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {v4 as uuidv4} from 'uuid';
 import {ErrorMessage} from '@hookform/error-message';
 
-import {carActions, getAll} from "../../store/carReducer";
+import {carActions, getAll} from "../../store/reducers/carReducer";
 import Cars from "../cars/Cars";
 import TabHeader from "../tabheader/TabHeader";
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import {useSelector, useDispatch} from "react-redux"
 
-import {carActions} from "../../store/carReducer";
+import {carActions} from "../../store/reducers/carReducer";
 import Car from "../car/Car";
 
 function Cars({handleOnChange}) {

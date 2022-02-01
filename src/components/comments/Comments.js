@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 
 import {useSelector, useDispatch} from "react-redux";
-import {getAll} from "../../store/commentReducer";
+import {getAll} from "../../store/reducers/commentReducer";
 import Comment from "../comment/Comment";
 
 function Comments() {
