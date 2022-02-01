@@ -109,7 +109,7 @@ const CarForm = () => {
                                    {
                                        required: 'Required Year',
                                        pattern: {
-                                           value: /^\d{4}$/g,
+                                           value: /^\d{4,4}$/g,
                                            message: 'Year: should be "YYYY" - like "1997"'
                                        }
                                    }
