@@ -9,7 +9,7 @@ function TabHeader() {
     const handleClick = (action) => {
         const checkedCars = state.filter(car => car.checked)
         switch (action) {
-            case 'pull':
+            case 'push':
                 checkedCars.forEach(car => {
                     const data = {model: car.model, price: car.price, year: car.year}
                     dispatch(createCar({id: car.curId, data}))
@@ -35,14 +35,14 @@ function TabHeader() {
             <h5 className={'col-2 border p-2 text-center align-items-center d-flex justify-content-center'}>Price</h5>
             <h5 className={'col-2 border p-2 text-center align-items-center d-flex justify-content-center'}>Year</h5>
             <div className={'col-2  d-flex flex-wrap align-items-center justify-content-center'}>
-                <div className={'col-12 text-center'}>Foreign operations</div>
+                <div className={'col-12 text-center'}>Server-side operations</div>
                 <button
                     type={'button'}
                     className={'btn btn-sm border col-3 m-1 btn-outline-danger p-1'}
-                    onClick={() => handleClick('pull')}
+                    onClick={() => handleClick('push')}
                     style={{height: '30px'}}
                 >
-                    <p>Pull</p>
+                    <p>Push</p>
                 </button>
                 <button
                     type={'button'}

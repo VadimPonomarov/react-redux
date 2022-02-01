@@ -1,8 +1,12 @@
 import React from 'react';
+import Posts from "../components/posts/Posts";
 
-function PostsPage(props) {
+
+function PostsPage() {
     return (
-        <div>Posts</div>
+        <div className={'container d-flex flex-wrap'}>
+            <Posts/>
+        </div>
     );
 }
 

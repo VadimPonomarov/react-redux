@@ -1,8 +1,12 @@
 import React from 'react';
+import Comments from "../components/comments/Comments";
 
-function CommentsPage(props) {
+
+function CommentsPage() {
     return (
-        <div>Comments</div>
+        <div className={'container d-flex flex-wrap'}>
+            <Comments/>
+        </div>
     );
 }
 

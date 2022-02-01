@@ -1,8 +1,12 @@
 import React from 'react';
 
-function UsersPage(props) {
+import Users from "../components/users/Users";
+
+function UsersPage() {
     return (
-        <div>Users</div>
+        <div className={'container d-flex flex-wrap'}>
+            <Users/>
+        </div>
     );
 }
 
