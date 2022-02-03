@@ -1,6 +1,6 @@
 import React from 'react';
-import {ILaunche} from '../interfaces/index.interfaces'
-import {IUser} from '../interfaces/functional.interfaces'
+import {ILaunche} from '../interfaces/index.interfaces.ts'
+import {IUser} from '../interfaces/functional.interfaces.ts'
 
 function TypeScriptPage() {
     const user: IUser = {name: 'Max', age: 18, gender: 'Male'}
