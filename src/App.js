@@ -8,6 +8,7 @@ import PostsPage from "./pages/PostsPage";
 import CommentsPage from "./pages/CommentsPage";
 import UserPostsPage from "./pages/UserPostsPage";
 import PostCommentsPage from "./pages/PostCommentsPage";
+import TypeScriptPage from './pages/TypeScriptPage';
 
 function App() {
     return (
@@ -19,6 +20,7 @@ function App() {
                 <Route path={'posts/:userId'} element={<UserPostsPage/>}/>
                 <Route path={'comments'} element={<CommentsPage/>}/>
                 <Route path={'posts/:postId/comments'} element={<PostCommentsPage/>}/>
+                <Route path={'typescript'} element={<TypeScriptPage/>}/>
             </Route>
         </Routes>
     )

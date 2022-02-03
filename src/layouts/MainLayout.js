@@ -4,11 +4,20 @@ import Menu from "../components/menu/Menu";
 import {Outlet} from 'react-router-dom';
 
 function MainLayout() {
-    const menuItems = ['Cars', 'Users', 'Posts', 'Comments']
+    const menuItems = ['Cars', 'Users', 'Posts', 'Comments', 'TypeScript']
 
     return (
         <div>
-            <div className={'d-flex navbar navbar-light bg-light justify-content-center mb-2 mt-2'}>
+            <div
+                className={
+                    'd-flex ' +
+                    'navbar ' +
+                    'navbar-light ' +
+                    'bg-light ' +
+                    'justify-content-center ' +
+                    'mb-2 ' +
+                    'mt-2'}
+            >
                 <Menu items={menuItems}/>
             </div>
             <Outlet/>
